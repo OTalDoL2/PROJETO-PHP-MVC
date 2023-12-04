@@ -1,0 +1,27 @@
+{
+    "name": "lucas/phpads3",
+    "description": "Projeto de PHP para matéria de Programação Web",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Lucas M",
+            "email": "otaldol2@github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4":{
+            "App\\":"App/",
+            "Core\\":"Core/"
+        },
+
+        "files":[
+            "Config/config.php"
+        ]
+
+
+    }
+}
