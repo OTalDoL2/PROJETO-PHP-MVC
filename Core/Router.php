@@ -3,7 +3,7 @@
 namespace Core;
 
 class Router{
-    private $controller = 'Login';
+    private $controller = 'Registro';
     private $method = 'index';
     private $param = '';
     public function __construct(){
