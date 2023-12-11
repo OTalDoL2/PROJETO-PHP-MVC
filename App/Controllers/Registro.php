@@ -2,13 +2,15 @@
 
 namespace App\Controllers;
 
-class Registro{
-    public function login(){
-        require_once __DIR__ . '/../views/login.php';
-    }
+use App\Models\Crud;
 
+class Registro extends Crud{
+    public function login(){
+        require_once __DIR__ . '/../Views/login.php';
+    }
+    
     public function tester(){
-        echo "kkk kque viagem";
+        require_once __DIR__ . '/../Views/you.php';
     }
 }
 
