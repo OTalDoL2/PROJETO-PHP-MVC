@@ -6,7 +6,7 @@ use App\Models\Crud;
 
 class Registro extends Crud{
     public function login(){
-        require_once __DIR__ . '/../Views/login.php';
+        require_once __DIR__ . '/../Views/login.html';
     }
     
     public function tester(){
@@ -14,6 +14,15 @@ class Registro extends Crud{
     }
     public function cadastro(){
         require_once __DIR__ . '/../Views/cadastro.php';
+    }
+    public function cadastra(){
+        $cadastro = $this->create();
+        require_once __DIR__ . '/../Views/login.html';
+    }
+    public function teste(){
+        // $cadastro = $this->create();
+        
+        require_once __DIR__ . '/../Views/login.html';
     }
 }
 

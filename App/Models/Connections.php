@@ -4,7 +4,7 @@ namespace App\Models;
 
 class Connections {
 
-    private $db_name = 'mysql:host=localhost;dbname=aula_mvc'; 
+    private $db_name = 'mysql:host=localhost;dbname=projeto_mvc'; 
     private $user = 'root'; 
     private $pass = ''; 
 
