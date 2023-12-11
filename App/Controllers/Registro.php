@@ -12,6 +12,9 @@ class Registro extends Crud{
     public function tester(){
         require_once __DIR__ . '/../Views/you.php';
     }
+    public function cadastro(){
+        require_once __DIR__ . '/../Views/cadastro.php';
+    }
 }
 
 

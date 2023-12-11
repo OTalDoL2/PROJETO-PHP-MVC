@@ -50,28 +50,39 @@
                                             <img src="assets/ok.png" alt="Logo" width="150" height="100">
                                             <p class="text-info"><strong>GUIA SAÚDE</strong></p>
                                         </div>
-                                    <h4 class="card-title">Login de Acesso</h4>
+                                    <h4 class="card-title">Cadastramento</h4>
                                     <br>
-                                    <form method="POST" class="my-login-validation" novalidate="" action="">
-                                    <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label custom-form-group">Email</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu endereço de e-mail">
-                                            
+                                    <form method="POST" class="my-registration-validation" novalidate="" action="">
+                                          <div class="mb-3">
+                                            <label for="exampleInputName1" class="form-label custom-form-group"><strong>Nome</strong>:</label>
+                                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Digite seu nome completo">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label custom-form-group">Senha</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+                                            <label for="exampleInputCPF1" class="form-label custom-form-group"><strong>CPF</strong>:</label>
+                                            <input type="text" class="form-control" id="exampleInputCPF1" placeholder="Digite seu CPF">
                                         </div>
-                                        <div class="mb-3 form-check custom-checkbox">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label" for="exampleCheck1">Lembrar</label>
+                                        <div class="mb-3">
+                                            <label for="exampleInputTelefone1" class="form-label custom-form-group"><strong>Telefone</strong>:</label>
+                                            <input type="tel" class="form-control" id="exampleInputTelefone1" placeholder="Digite seu telefone">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-
-                                        <div class="text-center">
-                                            <br>
-                                            <a href="?router=Registro/cadastro/"><p>Não possui uma conta?</p></a>
+                                        <div class="mb-3">
+                                            <label for="exampleInputAddress1" class="form-label custom-form-group"><strong>Endereço</strong>:</label>
+                                            <input type="text" class="form-control" id="exampleInputAddress1" placeholder="Digite seu endereço">
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label custom-form-group"><strong>Email</strong>:</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu endereço de e-mail">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label custom-form-group"><strong>Senha</strong>:</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" minlength="8" required>
+                                        </div>
+                                      
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                                            <label class="form-check-label" for="exampleCheck1"> <a href="#">Concordo com os termos de uso e política de privacidade.</a></label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
                                     </form>
                                 </div>
                             </div>
