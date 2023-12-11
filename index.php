@@ -10,3 +10,4 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Criando o router
 $router = new Router;
 
+?>
