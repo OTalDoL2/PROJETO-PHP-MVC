@@ -1,0 +1,134 @@
+<form>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Nome</label>
+        <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" value="Mark" required>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">CPF</label>
+          <input type="text" class="form-control" id="validationDefault02" placeholder="Sobrenome" value="Otto" required>
+        </div>
+    </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Usuário</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          </div>
+          <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Usuário" aria-describedby="inputGroupPrepend2" required>
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Cidade</label>
+        <input type="text" class="form-control" id="validationDefault03" placeholder="Cidade" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">Estado</label>
+        <input type="text" class="form-control" id="validationDefault04" placeholder="Estado" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault05">CEP</label>
+        <input type="text" class="form-control" id="validationDefault05" placeholder="CEP" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Concordo com os termos e condições
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+
+
+
+  <form method="POST" action="">
+    <div class="mb-3">
+            <label for="validationDefault01" class="form-label custom-form-group">Email</label>
+            <input type="email" class="form-control" id="validationDefault01" aria-describedby="emailHelp" name="email" placeholder="Digite seu endereço de e-mail"> 
+        </div>
+        <div class="mb-3">
+            <label for="validationDefault02" class="form-label custom-form-group">Senha</label>
+            <input type="password" class="form-control" id="validationDefault02" name="senha" placeholder="Digite sua senha">
+        </div>
+        <div class="mb-3 form-check custom-checkbox">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Lembrar</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+        <div class="text-center">
+            <br>
+            <a href="?router=registro/cadastro/"><p>Não possui uma conta?</p></a>
+        </div>
+   </form>
+
+
+
+
+  
+  <form method="POST" class="my-registration-validation" novalidate="" action="?router=registro/cadastro">
+    <div class="mb-3">
+      <label for="exampleInputName1" class="form-label custom-form-group"><strong>Nome</strong>:</label>
+      <input type="text" class="form-control" id="exampleInputName1" name="nome" placeholder="Digite seu nome completo">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputCPF1" class="form-label custom-form-group"><strong>CPF</strong>:</label>
+      <input type="text" class="form-control" id="exampleInputCPF1" name="cpf" placeholder="Digite seu CPF">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputTelefone1" class="form-label custom-form-group"><strong>Telefone</strong>:</label>
+      <input type="tel" class="form-control" id="exampleInputTelefone1" name="telefone" placeholder="Digite seu telefone">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputAddress1" class="form-label custom-form-group"><strong>Endereço</strong>:</label>
+      <input type="text" class="form-control" id="exampleInputAddress1" name="endereco" placeholder="Digite seu endereço">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label custom-form-group"><strong>Email</strong>:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Digite seu endereço de e-mail">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label custom-form-group"><strong>Senha</strong>:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha" name="senha" minlength="8" required>
+  </div>
+
+  <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+      <label class="form-check-label" for="exampleCheck1"> <a href="#">Concordo com os termos de uso e política de privacidade.</a></label>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+</form>
+
+
+
+
+
+
+
+
+<form method="POST" action="">
+  <div class="mb-3">
+      <label for="validationDefault06" class="form-label custom-form-group">Email:</label>
+      <input type="password" class="form-control" id="validationDefault05" name="email" placeholder="Digite seu email" required>
+  </div>
+  <div class="mb-3">
+      <label for="validationDefault02" class="form-label custom-form-group">Senha:</label>
+      <input type="password" class="form-control" id="validationDefault02" name="senha" placeholder="Digite sua senha" minlength="8" required>
+  </div>
+
+  <div class="form-group">
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2" class="form-label custom-form-group">
+          Lembrar
+          </label>
+      </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Registrar</button>
+</form>

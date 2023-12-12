@@ -7,33 +7,36 @@ class Crud extends Connections {
     // Método para criar um novo registro
     public function create() {
         
-        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-        $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_SPECIAL_CHARS);
-        $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
-        $endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_SPECIAL_CHARS);
-        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+        // Verificar se as chaves "nome" e "email" estão definidas no array $_POST
+        if (isset($_POST['nome'], $_POST['email'])) {
+            $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+            $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_SPECIAL_CHARS);
+            $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
+            $endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $conn = $this->connect();
+            $conn = $this->connect();
 
-        // Hash da senha usando password_hash
-        //$hashedSenha = password_hash($senha, PASSWORD_DEFAULT);
+            // Hash da senha usando password_hash
+            //$hashedSenha = password_hash($senha, PASSWORD_DEFAULT);
 
-        // id	nome	email	cpf	telefone	endereco	senha
+            // id	nome	email	cpf	telefone	endereco	senha
 
-        $sql = "INSERT INTO usuarios VALUES(default,:nome, :cpf ,:telefone ,:endereco ,:email, :senha)";
-        $stmt = $conn->prepare($sql);
+            $sql = "INSERT INTO usuarios VALUES(default,:nome, :cpf ,:telefone ,:endereco ,:email, :senha)";
+            $stmt = $conn->prepare($sql);
 
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':cpf', $cpf);
-        $stmt->bindParam(':telefone', $telefone);
-        $stmt->bindParam(':endereco', $endereco);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':cpf', $cpf);
+            $stmt->bindParam(':telefone', $telefone);
+            $stmt->bindParam(':endereco', $endereco);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
 
-        $stmt->execute();
+            $stmt->execute();
 
-        return $stmt;
+            return $stmt;
+        }
     }
 
     // Método para ler todos os registros

@@ -13,17 +13,22 @@ class Registro extends Crud{
         require_once __DIR__ . '/../Views/you.php';
     }
     public function cadastro(){
+        $cadastro = $this->create();
         require_once __DIR__ . '/../Views/cadastro.php';
     }
-    public function cadastra(){
-        $cadastro = $this->create();
-        require_once __DIR__ . '/../Views/login.html';
+    public function dashboard(){
+        //$cadastro = $this->create();
+        require_once __DIR__ . '/../Views/dashboard.php';
     }
-    public function teste(){
-        // $cadastro = $this->create();
+    // public function cadastra(){
+    //     require_once __DIR__ . '/../Views/login.html';
+    // }
+    // public function teste(){
+    //     // $cadastro = $this->create();
         
-        require_once __DIR__ . '/../Views/login.html';
-    }
+    //     require_once __DIR__ . '/../Views/login.html';
+    //testano aqui
+    // }
 }
 
 
