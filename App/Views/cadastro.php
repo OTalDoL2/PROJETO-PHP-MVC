@@ -19,13 +19,18 @@
         body {
             margin-bottom: 50px;
             background-color: #f1f1f1;
+            background-image: linear-gradient(160deg, #f1f1f1 0%, #24388b 70%);
         }
 
         .custom-form-group {
-            margin-right: 28rem; /* Ajuste conforme necessário */
+            margin-right: 32rem; /* Ajuste conforme necessário */
+        
         }
         .custom-checkbox {
-            margin-right: 25rem;
+            margin-right: 29rem;
+        }
+        .custom-card-move {
+            height: 30px;
         }
     </style>
 
@@ -37,18 +42,18 @@
     </header>
 
         <body>
-            <section class="h-100 d-flex align-items-center">
+            <section class="h-100 d-flex align-items-center custom-card-move">
                 <div class="container">
-                    <div class="row justify-content-md-center">
-                        <div class="card-wrapper text-center col-md-5">
+                    <div class="row justify-content-md-center ">
+                        <div class="card-wrapper text-center col-md-7">
                             <div class="brand">
                                 <!-- Seu conteúdo de marca vai aqui -->
                             </div>
                             <div class="card fat shadow-lg p-3 bg-white rounded-start">
                                 <div class="card-body">
                                          <div class="mb-2">
-                                            <img src="assets/ok.png" alt="Logo" width="150" height="100">
-                                            <p class="text-info"><strong>GUIA SAÚDE</strong></p>
+                                            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="100" height="100" class="rounded-circle">
+                                            
                                         </div>
                                     <h4 class="card-title">Cadastramento</h4>
                                     <br>
@@ -86,17 +91,17 @@
                                         <div class="form-group">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                                <label class="form-check-label" for="invalidCheck2">
+                                                <label class="form-check-label"  for="invalidCheck2">
                                                 Concordo com os termos e condições
                                                 </label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Registrar</button>
+                                        <button class="btn btn-primary btn-block" type="submit">Registrar</button>
                                     </form>
                                 </div>
                             </div>
                             <div class="footer mt-3">
-                                <a target="_blank" href="https://github.com/SantiagoRafael1"> Projeto PHP &copy; &mdash; ADS3B NOITE </a>
+                                <a target="_blank" href="https://github.com/OTalDoL2/PROJETO-PHP-MVC" style="color: white;"> Projeto PHP &copy; &mdash; ADS3B NOITE </a>
                             </div>
                         </div>
                     </div>
