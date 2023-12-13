@@ -66,7 +66,7 @@
         
     <div class="container mt-3">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-5">
             <img src="https://i.postimg.cc/PrzC7wyG/R.png" alt="Imagem Abaixo do Card" class="img-fluid">
         </div>
     </div>
@@ -74,13 +74,7 @@
  
 
 
-
-
-
-
-
-
-    <div class="container mt-5 custom-move-card">
+    <div class="container custom-move-card">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card bg-light rounded-3">
@@ -91,6 +85,7 @@
         <div class="mb-3">
             <label for="selectBairro" class="form-label">Bairro</label>
             <select class="form-select" id="selectBairro" name="bairro">
+                <option value="" data-default disabled selected> Selecione um Bairro</option>
                 <option value="bairro1">Bairro 1</option>
                 <option value="bairro2">Bairro 2</option>
                 <option value="bairro3">Bairro 3</option>
@@ -100,6 +95,7 @@
         <div class="mb-3" id="especialidadeSection" style="display: none;">
             <label for="selectEspecialidade" class="form-label">Especialidade</label>
             <select class="form-select" id="selectEspecialidade" name="especialidade">
+                <option value="" data-default disabled selected> Selecione um Serviço</option>
                 <option value="psiquiatra">Psiquiatra</option>
                 <option value="cardiologista">Cardiologista</option>
                 <option value="pediatra">Pediatra</option>
@@ -112,6 +108,7 @@
         <div class="mb-3" id="medicoSection" style="display: none;">
             <label for="selectMedico" class="form-label">Médico</label>
             <select class="form-select" id="selectMedico" name="medico">
+                <option value="" data-default disabled selected> Selecione um bairro</option>
                 <option value="joao">João Francisco Neves</option>
                 <option value="pedro">Pedro Alvarez Sales</option>
                 <option value="katarina">Katarina Scarlat</option>
@@ -121,19 +118,19 @@
         <div class="mb-3" id="horarioSection" style="display: none;">
             <label for="checkboxHorario" class="form-label">Horário Disponível</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="8:00" id="horario8">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="8:00" id="horario8">
                 <label class="form-check-label" for="horario8">8:00 AM - 9:00 AM</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="9:00" id="horario9">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="9:00" id="horario9">
                 <label class="form-check-label" for="horario9">9:00 AM - 10:00 AM</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="10:00" id="horario10">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="10:00" id="horario10">
                 <label class="form-check-label" for="horario10">10:00 AM - 11:00 AM</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="11:00" id="horario11">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="11:00" id="horario11">
                 <label class="form-check-label" for="horario11">11:00 AM - 12:00 PM</label>
             </div>
         </div>

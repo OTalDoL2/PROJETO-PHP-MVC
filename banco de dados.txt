@@ -12,3 +12,14 @@ CREATE TABLE usuarios (
   senha VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE consulta(
+  id INT NOT NULL AUTO_INCREMENT,
+  bairro VARCHAR(255) NOT NULL,
+  cliente_id INT,
+  especialidade VARCHAR(30) NOT NULL,
+  medico VARCHAR(255) NOT NULL,
+  horario VARCHAR(20) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY(cliente_id) REFERENCES usuarios(id)
+)
