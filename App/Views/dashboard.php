@@ -27,6 +27,9 @@
         .custom-checkbox {
             margin-right: 25rem;
         }
+        .custom-move{
+            margin-left: 9rem;
+        }
         
 
     </style>
@@ -60,13 +63,29 @@
 
     </header>
     <body>
-     
-    <div class="container mt-5">
+        
+    <div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <img src="https://i.postimg.cc/PrzC7wyG/R.png" alt="Imagem Abaixo do Card" class="img-fluid">
+        </div>
+    </div>
+</div>
+ 
+
+
+
+
+
+
+
+
+    <div class="container mt-5 custom-move-card">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card bg-light rounded-3">
                 <div class="card-body">
-                    <h5 class="card-title text-start">MARCAÇÃO DE EXAME</h5>
+                    <h5 class="card-title custom-move">MARCAÇÃO DE EXAME</h5>
    
     <form id="appointmentForm">
         <div class="mb-3">
@@ -119,9 +138,10 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" id="submitButton" disabled>Agendar</button>
+        <button type="button" class="btn btn-primary btn-block" id="submitButton" disabled>Agendar</button>
     </form>
 </div>
+        
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
