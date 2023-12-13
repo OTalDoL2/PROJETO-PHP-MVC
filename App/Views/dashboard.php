@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="stylesheet" type="text/css" href="config/materialize/css/materialize.min.css"></!-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Dashboard</title>
     <style>
         body,
         html {
@@ -18,100 +18,183 @@
 
         body {
             margin-bottom: 50px;
-            background-color: #f1f1f1;
             background-image: linear-gradient(160deg, #f1f1f1 0%, #24388b 70%);
         }
 
         .custom-form-group {
-            margin-right: 32rem; /* Ajuste conforme necessário */
-        
+            margin-right: 28rem; /* Ajuste conforme necessário */
         }
         .custom-checkbox {
-            margin-right: 29rem;
+            margin-right: 25rem;
         }
-        .custom-card-move {
-            height: 30px;
-        }
+        
+
     </style>
 
-    <title>PROJETOMVC</title>
+
 </head>
     <header>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="45" height="45" class="d-inline-block align-top">
+        </a>
+        <span class="navbar-text">
+            Bem-vindo!
+        </span>
+            <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Ativo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Desativado</a>
+            </li>
+        </ul>
+    </nav>
 
     </header>
+    <body>
+     
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-light rounded-3">
+                <div class="card-body">
+                    <h5 class="card-title text-start">MARCAÇÃO DE EXAME</h5>
+   
+    <form id="appointmentForm">
+        <div class="mb-3">
+            <label for="selectBairro" class="form-label">Bairro</label>
+            <select class="form-select" id="selectBairro" name="bairro">
+                <option value="bairro1">Bairro 1</option>
+                <option value="bairro2">Bairro 2</option>
+                <option value="bairro3">Bairro 3</option>
+            </select>
+        </div>
 
-        <body>
-            <section class="h-100 d-flex align-items-center custom-card-move">
-                <div class="container">
-                    <div class="row justify-content-md-center ">
-                        <div class="card-wrapper text-center col-md-7">
-                            <div class="brand">
-                                <!-- Seu conteúdo de marca vai aqui -->
-                            </div>
-                            <div class="card fat shadow-lg p-3 bg-white rounded-start">
-                                <div class="card-body">
-                                         <div class="mb-2">
-                                            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="100" height="100" class="rounded-circle">
-                                            
-                                        </div>
-                                    <h4 class="card-title">Cadastramento</h4>
-                                    <br>
-                                    <form method="POST" action="?router=registro/cadastro">
-                                        <div class="mb-3">
-                                            <label for="validationDefault01" class="form-label custom-form-group"><strong>Nome</strong>:</label>
-                                            <input type="text" class="form-control" id="validationDefault01" name="nome" placeholder="Digite seu nome completo" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="validationDefault02" class="form-label custom-form-group"><strong>CPF</strong>:</label>
-                                            <input type="text" class="form-control" id="validationDefault02" name="cpf" placeholder="Digite seu CPF" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="validationDefault03" class="form-label custom-form-group"><strong>Telefone</strong>:</label>
-                                            <input type="text" class="form-control" id="validationDefault03" name="telefone" placeholder="Digite seu telefone" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="validationDefault04" class="form-label custom-form-group"><strong>Endereço</strong>:</label>
-                                            <input type="text" class="form-control" id="validationDefault04" name="endereco" placeholder="Digite seu endereço" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="validationDefault05" class="form-label custom-form-group"><strong>Email</strong>:</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                                                </div>
-                                                <input type="email" class="form-control" id="validationDefault05" name="email" placeholder="Digite seu endereço de e-mail" aria-describedby="inputGroupPrepend2" required>
-                                            </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="validationDefault06" class="form-label custom-form-group"><strong>Senha</strong>:</label>
-                                            <input type="password" class="form-control" id="validationDefault05" name="senha" placeholder="Digite sua senha" minlength="8" required>
-                                        </div>
+        <div class="mb-3" id="especialidadeSection" style="display: none;">
+            <label for="selectEspecialidade" class="form-label">Especialidade</label>
+            <select class="form-select" id="selectEspecialidade" name="especialidade">
+                <option value="psiquiatra">Psiquiatra</option>
+                <option value="cardiologista">Cardiologista</option>
+                <option value="pediatra">Pediatra</option>
+                <option value="neurologista">Neurologista</option>
+                <option value="dermatologista">Dermatologista</option>
+                <option value="ginecologista">Ginecologista</option>
+            </select>
+        </div>
 
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                                <label class="form-check-label"  for="invalidCheck2">
-                                                Concordo com os termos e condições
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary btn-block" type="submit">Registrar</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="footer mt-3">
-                                <a target="_blank" href="https://github.com/OTalDoL2/PROJETO-PHP-MVC" style="color: white;"> Projeto PHP &copy; &mdash; ADS3B NOITE </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="mb-3" id="medicoSection" style="display: none;">
+            <label for="selectMedico" class="form-label">Médico</label>
+            <select class="form-select" id="selectMedico" name="medico">
+                <option value="joao">João Francisco Neves</option>
+                <option value="pedro">Pedro Alvarez Sales</option>
+                <option value="katarina">Katarina Scarlat</option>
+            </select>
+        </div>
+
+        <div class="mb-3" id="horarioSection" style="display: none;">
+            <label for="checkboxHorario" class="form-label">Horário Disponível</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="8:00" id="horario8">
+                <label class="form-check-label" for="horario8">8:00 AM - 9:00 AM</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="9:00" id="horario9">
+                <label class="form-check-label" for="horario9">9:00 AM - 10:00 AM</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="10:00" id="horario10">
+                <label class="form-check-label" for="horario10">10:00 AM - 11:00 AM</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="11:00" id="horario11">
+                <label class="form-check-label" for="horario11">11:00 AM - 12:00 PM</label>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="submitButton" disabled>Agendar</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const selectBairro = document.getElementById('selectBairro');
+    const especialidadeSection = document.getElementById('especialidadeSection');
+    const selectEspecialidade = document.getElementById('selectEspecialidade');
+    const medicoSection = document.getElementById('medicoSection');
+    const selectMedico = document.getElementById('selectMedico');
+    const horarioSection = document.getElementById('horarioSection');
+    const submitButton = document.getElementById('submitButton');
+
+    selectBairro.addEventListener('change', function () {
+        if (selectBairro.value !== '') {
+            especialidadeSection.style.display = 'block';
+            selectEspecialidade.addEventListener('change', showMedicoSection);
+        } else {
+            hideSections([especialidadeSection, medicoSection, horarioSection]);
+            resetSelects([selectEspecialidade, selectMedico]);
+            removeEventListeners([selectEspecialidade]);
+        }
+    });
+
+    function showMedicoSection() {
+        if (selectEspecialidade.value !== '') {
+            medicoSection.style.display = 'block';
+            selectMedico.addEventListener('change', showHorarioSection);
+        } else {
+            hideSections([medicoSection, horarioSection]);
+            resetSelects([selectMedico]);
+            removeEventListeners([selectMedico]);
+        }
+    }
+
+    function showHorarioSection() {
+        if (selectMedico.value !== '') {
+            horarioSection.style.display = 'block';
+            submitButton.disabled = false;
+        } else {
+            hideSections([horarioSection]);
+            submitButton.disabled = true;
+        }
+    }
+
+    function hideSections(sections) {
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+
+    function resetSelects(selects) {
+        selects.forEach(select => {
+            select.value = '';
+        });
+    }
+
+    function removeEventListeners(elements) {
+        elements.forEach(element => {
+            const clonedElement = element.cloneNode(true);
+            element.parentNode.replaceChild(clonedElement, element);
+        });
+    }
+
+    submitButton.addEventListener('click', function () {
+        const horariosSelecionados = document.querySelectorAll('#horarioSection input[type=checkbox]:checked');
+        if (horariosSelecionados.length === 0) {
+            alert('Selecione pelo menos um horário disponível.');
+        } else {
+            alert('Agendamento realizado com sucesso!');
+        }
+    });
+</script>
+
         
-            
-            <!--<script src="config/materialize/js/materialize.min.js"></script>!-->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         </body>
 </html>
+
