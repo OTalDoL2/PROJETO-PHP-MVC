@@ -17,8 +17,17 @@ class Registro extends Crud{
         require_once __DIR__ . '/../Views/cadastro.php';
     }
     public function dashboard(){
-        //$cadastro = $this->create();
-        require_once __DIR__ . '/../Views/dashboard.php';
+        $loginSuccess = $this->verificaLogin();
+    
+        if ($loginSuccess) {
+            // O login foi bem-sucedido, redirecione ou faça o que for necessário
+            //header("location: dashboard.php");
+            // exit();
+            require_once __DIR__ . '/../Views/dashboard.php';
+        } else {
+            // O login falhou, talvez exiba uma mensagem ou faça algo diferente
+            require_once __DIR__ . '/../Views/pageErro.html';
+        }
     }
     // public function cadastra(){
     //     require_once __DIR__ . '/../Views/login.html';
