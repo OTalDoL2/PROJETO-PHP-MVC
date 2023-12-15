@@ -47,17 +47,15 @@
             <ul class="navbar-nav ml-auto">
             
             <li class="nav-item">
-                <a class="nav-link active" href="#">Ativo</a>
+                <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Sobre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Sair</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Desativado</a>
-            </li>
+            
         </ul>
     </nav>
 
