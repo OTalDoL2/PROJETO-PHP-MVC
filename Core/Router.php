@@ -4,7 +4,7 @@ namespace Core;
 
 class Router{
     private $controller = 'Registro';
-    private $method = 'login';
+    private $method = 'home';
     private $param = [];
     public function __construct(){
         // 3 Informações importantes do url:
