@@ -34,6 +34,10 @@
 
   ![Tela de Login](https://i.imgur.com/LFHZo7U.png)
 
+- Caso você não possua conta, existe um caminho na tela de login abaixo do botão `Entrar` que você pode realizar o cadastro e em seguida realizar o login.
+
+  ![Tela de Cadastro](https://i.imgur.com/do6mO27.png)
+  
 - Após o login, você será direcionado para a tela de marcação de exame (dashboard).
 
   ![Dashboard - Marcação de Exame](https://i.imgur.com/A9Qq1fa.png)
