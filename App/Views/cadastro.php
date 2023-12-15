@@ -30,13 +30,14 @@
             margin-right: 29rem;
         }
         .custom-card-move {
-            margin-top: 90px;
+            margin-top: 110px;
         }
+       
        
         
     </style>
 
-    <title>PROJETOMVC</title>
+    <title>Cadastramento</title>
 </head>
     <header>
         <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
@@ -76,11 +77,8 @@
                             </div>
                             <div class="card fat shadow-lg p-3 bg-white rounded-start">
                                 <div class="card-body">
-                                         <div class="">
-                                            <img src="https://w7.pngwing.com/pngs/732/411/png-transparent-medical-symbol-illustration-physician-health-care-icon-doctor-material-png-material-text-people.png" alt="Logo" width="70" height="70" class="rounded-circle">
-                                            
-                                        </div>
-                                    <h4 class="card-title mt-2">Cadastramento</h4>
+                                        
+                                    <h2 class="card-title mt-2">Cadastramento</h2>
                                     <br>
                                     <form method="POST" action="?router=registro/cadastro">
                                         <div class="mb-3">
