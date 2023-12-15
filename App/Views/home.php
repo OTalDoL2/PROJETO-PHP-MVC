@@ -77,7 +77,7 @@
   <body>
     
 <header>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
+ <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
     <div class="container">
         <a class="navbar-brand" href="#">
             <!-- Aqui você pode adicionar a sua imagem -->
@@ -89,10 +89,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="#">Marcar Exame</a>
+                    <a class="nav-link" style="font-weight: bold;" href="?router=registro/home/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="font-weight: bold;" href="?router=registro/login/">Login</a>
+                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/login/">Marcar Exame</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>

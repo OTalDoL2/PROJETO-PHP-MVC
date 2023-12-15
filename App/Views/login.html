@@ -27,27 +27,56 @@
         .custom-checkbox {
             margin-right: 30rem;
         }
+        .custom-card-style {
+        margin-top: 50px; /* Ajuste a margem superior conforme necessário para diminuir a altura */
+        margin-bottom: 20px; /* Ajuste a margem inferior conforme necessário para diminuir a altura */
+        }
+
     </style>
 
     <title>PROJETOMVC</title>
 </head>
     <header>
-
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- Aqui você pode adicionar a sua imagem -->
+                    <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="70" height="70" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-weight: bold;" href="?router=registro/login/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="#">Marcar Exame</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
 
     </header>
 
         <body>
-            <section class="h-100 d-flex align-items-center">
+            <section class="h-75 d-flex align-items-center">
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="card-wrapper text-center col-md-7">
                             <div class="brand">
                                 <!-- Seu conteúdo de marca vai aqui -->
                             </div>
-                            <div class="card fat shadow-lg p-3 bg-white rounded-start">
+                            <div class="card fat shadow-lg p-3 bg-white rounded-start custom-card-style">
                                 <div class="card-body">
                                          <div class="mb-2">
-                                            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="100" height="100" class="rounded-circle">
+                                            <img src="https://w7.pngwing.com/pngs/732/411/png-transparent-medical-symbol-illustration-physician-health-care-icon-doctor-material-png-material-text-people.png" alt="Logo" width="100" height="100" class="rounded-circle">
                                             
                                         </div>
                                     <h4 class="card-title">Login de Acesso</h4>

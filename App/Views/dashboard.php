@@ -8,7 +8,7 @@
     <style>
         body,
         html {
-            height: 100%;
+           
             margin: 0;
         }
 
@@ -17,7 +17,7 @@
         }
 
         body {
-            margin-bottom: 50px;
+        
             background-image: linear-gradient(160deg, #f1f1f1 0%, #24388b 70%);
         }
 
@@ -30,6 +30,69 @@
         .custom-move{
             margin-left: 9rem;
         }
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+              body {
+         
+          color: #5a5a5a;
+        }
+        .carousel {
+          margin-bottom: 4rem;
+        }
+        .carousel-caption {
+          bottom: 3rem;
+          z-index: 10;
+        }
+        .carousel-item {
+          height: 32rem;
+        }
+        .carousel-item > img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-width: 100%;
+          height: 32rem;
+        }
+        .marketing .col-lg-4 {
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+        .marketing h2 {
+          font-weight: 400;
+        }
+        .marketing .col-lg-4 p {
+          margin-right: .75rem;
+          margin-left: .75rem;
+        }
+        .featurette-divider {
+          margin: 5rem 0; 
+        }
+        .featurette-heading {
+          font-weight: 300;
+          line-height: 1;
+          letter-spacing: -.05rem;
+        }
+        @media (min-width: 40em) {
+          /* Bump up size of carousel content */
+          .carousel-caption p {
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.4;
+          }
+          .featurette-heading {
+            font-size: 50px;
+          }
+        }
+        @media (min-width: 62em) {
+          .featurette-heading {
+            margin-top: 7rem;
+          }
+        }
         
 
     </style>
@@ -37,27 +100,26 @@
 
 </head>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="45" height="45" class="d-inline-block align-top">
-        </a>
-        <span class="navbar-text">
-            Bem-vindo!
-        </span>
-            <ul class="navbar-nav ml-auto">
-            
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sair</a>
-            </li>
-            
-        </ul>
-    </nav>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <!-- Aqui você pode adicionar a sua imagem -->
+                    <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="70" height="70" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/home/">Sair</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
 
     </header>
     <body>
@@ -84,9 +146,9 @@
             <label for="selectBairro" class="form-label">Bairro</label>
             <select class="form-select" id="selectBairro" name="bairro">
                 <option value="" data-default disabled selected> Selecione um Bairro</option>
-                <option value="bairro1">Bairro 1</option>
-                <option value="bairro2">Bairro 2</option>
-                <option value="bairro3">Bairro 3</option>
+                <option value="bairro1">Santo Amaro</option>
+                <option value="bairro2">Iputinga</option>
+                <option value="bairro3">Casa Amarela</option>
             </select>
         </div>
 
@@ -212,4 +274,3 @@
         
         </body>
 </html>
-

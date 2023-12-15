@@ -17,7 +17,7 @@
         }
 
         body {
-            margin-bottom: 50px;
+            
             background-color: #f1f1f1;
             background-image: linear-gradient(160deg, #f1f1f1 0%, #24388b 70%);
         }
@@ -30,20 +30,45 @@
             margin-right: 29rem;
         }
         .custom-card-move {
-            height: 30px;
+            margin-top: 90px;
         }
+       
+        
     </style>
 
     <title>PROJETOMVC</title>
 </head>
     <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffffff;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="70" height="70" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-weight: bold;" href="?router=registro/home/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="#">Marcar Exame</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
 
     </header>
 
         <body>
-            <section class="h-100 d-flex align-items-center custom-card-move">
-                <div class="container">
+            <section class="h-50 d-flex align-items-center">
+                <div class="container custom-card-move">
                     <div class="row justify-content-md-center ">
                         <div class="card-wrapper text-center col-md-7">
                             <div class="brand">
@@ -51,11 +76,11 @@
                             </div>
                             <div class="card fat shadow-lg p-3 bg-white rounded-start">
                                 <div class="card-body">
-                                         <div class="mb-2">
-                                            <img src="https://i.postimg.cc/wjQk8dwr/gsaude.png" alt="Logo" width="100" height="100" class="rounded-circle">
+                                         <div class="">
+                                            <img src="https://w7.pngwing.com/pngs/732/411/png-transparent-medical-symbol-illustration-physician-health-care-icon-doctor-material-png-material-text-people.png" alt="Logo" width="70" height="70" class="rounded-circle">
                                             
                                         </div>
-                                    <h4 class="card-title">Cadastramento</h4>
+                                    <h4 class="card-title mt-2">Cadastramento</h4>
                                     <br>
                                     <form method="POST" action="?router=registro/cadastro">
                                         <div class="mb-3">
