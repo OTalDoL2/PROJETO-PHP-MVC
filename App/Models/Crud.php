@@ -32,10 +32,10 @@ class Crud extends Connections {
                 // Verifica se a consulta retornou algum registro
                 if ($stmt->rowCount() > 0) {
                     // O e-mail já existe
-                    echo "O e-mail já existe.";
+                    //echo "O e-mail já existe.";
                 } else {
                     // O e-mail não existe
-                    echo "O e-mail está disponível.";
+                    //echo "O e-mail está disponível.";
                     $sql = "INSERT INTO usuarios VALUES(default,:nome, :cpf ,:telefone ,:endereco ,:email, :senha)";
                     $stmt = $conn->prepare($sql);
 
@@ -48,7 +48,9 @@ class Crud extends Connections {
 
                     $stmt->execute();
 
-                    return $stmt;
+                    return true;
+
+                    //return $stmt;
                 }
             
             // Hash da senha usando password_hash
