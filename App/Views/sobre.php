@@ -108,7 +108,7 @@
 
         <h2>Lucas Ramos</h2>
         <p>Desenvolvedor Full Stack</p>
-        <p>Com uma ampla experiência no desenvolvimento de soluções web, Lucas Ramos traz consigo habilidades técnicas excepcionais.</p>
+        <p>Com uma ampla experiência no desenvolvimento de soluções web, Lucas Ramos traz consigo habilidades técnicas excepcionais e soluções tecnológicas inovadoras.</p>
         <p><a class="btn btn-secondary bg-primary" href="https://github.com/OTalDoL2" target="_blank">Exibir &raquo;</a></p>
       </div>
       <div class="col-lg-4">
