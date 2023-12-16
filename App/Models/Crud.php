@@ -90,7 +90,9 @@ class Crud extends Connections {
     // Método para atualizar um registro
     public function update() {
 
-        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $conn = $this->connect();
+
+        // $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
         $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_SPECIAL_CHARS);
         $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -98,12 +100,12 @@ class Crud extends Connections {
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        $conn = $this->connect();
+     
 
         // Hash da senha usando password_hash
         //$hashedSenha = password_hash($senha, PASSWORD_DEFAULT);
 
-        $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = :id";
+        $sql = "UPDATE usuarios SET nome = :nome, cpf = :cpf, telefone = :telefone, endereco = :endereco, email = :email, senha = :senha WHERE logado = 1";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':nome', $nome);

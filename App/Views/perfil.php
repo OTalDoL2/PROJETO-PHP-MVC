@@ -114,34 +114,37 @@
                                 <h6>Informações</h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
-                                    <div class="col-6 mb-3">
-                                        <h6>Nome:</h6>
-                                        <input id="nomeEditavel" class="form-control" type="text"  value="<?php echo $nomeEditavel; ?>" required maxlength="30">
+                                    <form action="?router=registro/atualizarUsuario/" method="post">
+                                        <div class="col-6 mb-3">
+                                            <h6>Nome:</h6>
+                                    <input id="nomeEditavel" class="form-control" type="text" name="nome" value="<?php echo $nomeEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>CPF:</h6>
-                                        <input id="cpfEditavel" class="form-control" type="text" pattern="\d{11}" maxlength="11" placeholder="<?php echo $cpfEditavel; ?>" required>
+                                        <input id="cpfEditavel" class="form-control" type="text" name="cpf" pattern="\d{11}" maxlength="11" value="<?php echo $cpfEditavel; ?>" required>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Telefone:</h6>
-                                        <input id="telefoneEditavel" class="form-control" type="tel" pattern="\d{11}" maxlength="11" placeholder="<?php echo $telefoneEditavel; ?>" required>
+                                    <input id="telefoneEditavel" class="form-control" name="telefone" type="tel" pattern="\d{11}" maxlength="11" value="<?php echo $telefoneEditavel; ?>" required>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Endereço:</h6>
-                                        <input id="enderecoEditavel" class="form-control" type="text" value="<?php echo $enderecoEditavel; ?>" required maxlength="30">
+                                        <input id="enderecoEditavel" class="form-control" name="endereco" type="text" value="<?php echo $enderecoEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Email:</h6>
-                                        <input id="emailEditavel" class="form-control" type="email" value="<?php echo $emailEditavel; ?>" required>
+                                        <input id="emailEditavel" class="form-control" name="email" type="email" value="<?php echo $emailEditavel; ?>" required>
                                     </div>
+                                    
                                     <div class="col-6 mb-3">
                                         <h6>Senha:</h6>
-                                        <input id="senhaEditavel" class="form-control" type="password" value="<?php echo $senhaEditavel; ?>" required maxlength="30">
+                                        <input id="senhaEditavel" class="form-control" name="senha" type="password" value="<?php echo $senhaEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="d-flex justify-content-start ml-3">
-                                        <a id="btnSalvar" class="btn btn-primary" href="?router=registro/home/">Salvar Alterações</a>
-                                        <!-- <button id="btnSalvar" onclick="salvarAlteracoes()" class="btn btn-primary">Salvar Alterações</button> -->
+                                        <!-- <a id="btnSalvar" class="btn btn-primary" href="?router=registro/atualizarUsuario/">Salvar Alterações</a> -->
+                                        <button id="btnSalvar" type="submit" class="btn btn-primary">Salvar Alterações</button>
                                     </div>
+                                </form>
                             </div>
                         </div>
                     </div>
