@@ -30,7 +30,7 @@ class Crud extends Connections {
         // O e-mail já existe
         echo "Cliente inválido.";
     } else {
-        $sql = "INSERT INTO consulta VALUES(default, :bairro, :cliente_id, :especialidade, :medico, :horario)";
+        $sql = "INSERT INTO consulta VALUES(default, :bairro, :cliente_id, :especialidade, :medico, :horario, :logado)";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':bairro', $bairro);

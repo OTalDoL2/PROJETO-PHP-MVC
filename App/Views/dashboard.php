@@ -112,11 +112,14 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <a class="nav-link" style="font-weight: bold;" href="?router=registro/home/">Home</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/home/">Sair</a>
-                    </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/logon/">Sair</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -141,7 +144,7 @@
                 <div class="card-body">
                     <h5 class="card-title custom-move">MARCAÇÃO DE EXAME</h5>
    
-    <form id="appointmentForm">
+    <form id="appointmentForm" method="POST" action="?router=registro/consulta">
         <div class="mb-3">
             <label for="selectBairro" class="form-label">Bairro</label>
             <select class="form-select" id="selectBairro" name="bairro">
@@ -198,8 +201,26 @@
         <button type="button" class="btn btn-primary btn-block" id="submitButton" disabled>Agendar</button>
     </form>
 </div>
-        
-
+ <!-- MODAL -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalhes do Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Bairro:</strong> <span id="modalBairro"></span></p>
+                <p><strong>Especialidade:</strong> <span id="modalEspecialidade"></span></p>
+                <p><strong>Médico:</strong> <span id="modalMedico"></span></p>
+                <p><strong>Horário:</strong> <span id="modalHorario"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const selectBairro = document.getElementById('selectBairro');
@@ -267,6 +288,27 @@
             alert('Selecione pelo menos um horário disponível.');
         } else {
             alert('Agendamento realizado com sucesso!');
+        }
+    });
+    submitButton.addEventListener('click', function () {
+        const horariosSelecionados = document.querySelectorAll('#horarioSection input[type=radio]:checked');
+        if (horariosSelecionados.length === 0) {
+            alert('Selecione pelo menos um horário disponível.');
+        } else {
+            const bairroSelecionado = selectBairro.value;
+            const especialidadeSelecionada = selectEspecialidade.value;
+            const medicoSelecionado = selectMedico.value;
+            const horarioSelecionado = horariosSelecionados[0].value;
+
+            // Exibir os dados no modal
+            document.getElementById('modalBairro').innerText = bairroSelecionado;
+            document.getElementById('modalEspecialidade').innerText = especialidadeSelecionada;
+            document.getElementById('modalMedico').innerText = medicoSelecionado;
+            document.getElementById('modalHorario').innerText = horarioSelecionado;
+
+            // Abrir o modal
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
         }
     });
 </script>

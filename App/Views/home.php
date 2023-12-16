@@ -92,7 +92,7 @@
                     <a class="nav-link" style="font-weight: bold;" href="?router=registro/home/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/login/">Marcar Exame</a>
+                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="?router=registro/checkLogin/">Marcar Exame</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" style="font-weight: bold;" href="?router=registro/sobre/">Sobre</a>

@@ -75,15 +75,15 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="#">Marcar Exame</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-weight: bold;" href="?router=registro/login/">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" style="font-weight: bold;" href="#">Sobre</a>
+              <li class="nav-item">
+                  <a class="nav-link" style="font-weight: bold;" href="?router=registro/home/">Home</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="#">Marcar Exame</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-weight: bold;" href="#">Sobre</a>
+            </li>
             </ul>
         </div>
     </div>

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+$status_login = false;
 class Crud extends Connections {
-
     // Método para criar um novo registro
     public function create() {
         
@@ -148,6 +148,85 @@ class Crud extends Connections {
         return $result;
     }
 
+    public function setLoginStatus($status) {
+        global $status_login;
+    
+        $status_login = $status;
+    }
+    
+    public function getLoginStatus() {
+        $conn = $this->connect();
+    
+        $sql = "SELECT * FROM usuarios WHERE logado = 1";
+    
+        $stmt = $conn->prepare($sql);
+    
+        $stmt->execute();
+    
+        $row = $stmt->fetch();
+    
+        if ($row) {
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public function create_consulta() {
+        
+        $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
+        $cliente_id = filter_input(INPUT_POST, 'cliente_id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $especialidade = filter_input(INPUT_POST, 'especialidade', FILTER_SANITIZE_SPECIAL_CHARS);
+        $medico = filter_input(INPUT_POST, 'medico', FILTER_VALIDATE_EMAIL);
+        $horario = filter_input(INPUT_POST, 'horario', FILTER_SANITIZE_SPECIAL_CHARS);
+    
+        $conn = $this->connect();
+    
+        $query = "SELECT id FROM usuarios WHERE id = :id_cliente";
+    
+        // Prepara a consulta
+        $stmt = $conn->prepare($query);
+    
+        // Vincula o parâmetro
+        $stmt->bindParam(":id_cliente", $cliente_id);
+    
+        // Executa a consulta
+        $stmt->execute();
+    
+        if ($stmt->rowCount() > 0) {
+            // O e-mail já existe
+            echo "Cliente inválido.";
+        } else {
+            $sql = "INSERT INTO consulta VALUES(default, :bairro, :cliente_id, :especialidade, :medico, :horario, :logado)";
+            $stmt = $conn->prepare($sql);
+    
+            $stmt->bindParam(':bairro', $bairro);
+            $stmt->bindParam(':cliente_id', $cliente_id);
+            $stmt->bindParam(':especialidade', $especialidade);
+            $stmt->bindParam(':medico', $medico);
+            $stmt->bindParam(':horario', $horario);
+    
+            $stmt->execute();
+    
+            return $stmt;
+        }
+            
+    }
+
+    public function logon_user(){
+        $conn = $this->connect();
+    
+
+        $sql = "UPDATE usuarios set logado = 0 WHERE logado = 1";
+    
+        $stmt = $conn->prepare($sql);
+    
+        // $stmt->bindParam(':email', $email);
+        // $stmt->bindParam(':logado', 1);
+        $stmt->execute();
+        return true;
+    }
+    
     public function verificaLogin() {
     
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -168,23 +247,21 @@ class Crud extends Connections {
     
         if ($row) {
             $senhaDB = $row['senha'];
-            //echo"$senhaDB";
-    
-            // Use password_verify para verificar a senha
+            
             if ($senha == $senhaDB) {
-                //echo"$senha";
-                //echo"$senhaDB";
-                //session_start();
-                //$_SESSION['email'] = $email;
+                $sql = "UPDATE usuarios set logado = 1 WHERE email = :email";
+    
+                $stmt = $conn->prepare($sql);
+            
+                $stmt->bindParam(':email', $email);
+                // $stmt->bindParam(':logado', 1);
+                $stmt->execute();
+
                 return true; // Indicação de sucesso
             } else {
-                // Senha incorreta
-                //echo"Senha incorreta";
                 return false; // Indicação de falha
             }
         } else {
-            // Email incorreto
-            //echo"Email incorreto";
             return false; // Indicação de falha
         }
     
