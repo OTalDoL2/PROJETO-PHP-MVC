@@ -52,14 +52,14 @@ class Registro extends Crud {
     }
     
     public function consulta(){
-        $cadastro = $this->create_consulta();
+        $this->create_consulta();
         
-        if($cadastro === true){
-        $titulo = "Cadastro";
-        $mensagem = "Registraassssssssssssssssssssdo com Sucesso!";
-        $textoBotao = "Clique Aqui para Logar";
-        $this->exibirModal($titulo, $mensagem,$textoBotao);
-        }
+        // if($cadastro === true){
+        //     $titulo = "Cadastro";
+        //     $mensagem = "Registraassssssssssssssssssssdo com Sucesso!";
+        //     $textoBotao = "Clique Aqui para Logar";
+        //     $this->exibirModal($titulo, $mensagem,$textoBotao);
+        // }
     }
 
     public function checkLogin(){

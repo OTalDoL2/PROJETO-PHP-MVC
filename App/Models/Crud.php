@@ -174,42 +174,39 @@ class Crud extends Connections {
 
     public function create_consulta() {
         
+        // $cliente_id = filter_input(INPUT_POST, 'cliente_id', FILTER_SANITIZE_SPECIAL_CHARS);
+
         $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_SPECIAL_CHARS);
-        $cliente_id = filter_input(INPUT_POST, 'cliente_id', FILTER_SANITIZE_SPECIAL_CHARS);
         $especialidade = filter_input(INPUT_POST, 'especialidade', FILTER_SANITIZE_SPECIAL_CHARS);
-        $medico = filter_input(INPUT_POST, 'medico', FILTER_VALIDATE_EMAIL);
+        $medico = filter_input(INPUT_POST, 'medico', FILTER_SANITIZE_SPECIAL_CHARS);
         $horario = filter_input(INPUT_POST, 'horario', FILTER_SANITIZE_SPECIAL_CHARS);
-    
+        
         $conn = $this->connect();
     
-        $query = "SELECT id FROM usuarios WHERE id = :id_cliente";
+        $query = "SELECT nome FROM usuarios WHERE logado = 1";
+
     
         // Prepara a consulta
-        $stmt = $conn->prepare($query);
-    
-        // Vincula o parâmetro
-        $stmt->bindParam(":id_cliente", $cliente_id);
-    
-        // Executa a consulta
+        $stmta = $conn->prepare($query);
+
+        $stmta->execute();
+
+        $id = $stmta->fetch()[0];
+        
+        $sql = "INSERT INTO consulta VALUES(default, :bairro, :cliente_id, :especialidade, :medico, :horario)";
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':cliente_id', $id);
+        $stmt->bindParam(':especialidade', $especialidade);
+        $stmt->bindParam(':medico', $medico);
+        $stmt->bindParam(':horario', $horario);
+
         $stmt->execute();
+
+        return true;
+
     
-        if ($stmt->rowCount() > 0) {
-            // O e-mail já existe
-            echo "Cliente inválido.";
-        } else {
-            $sql = "INSERT INTO consulta VALUES(default, :bairro, :cliente_id, :especialidade, :medico, :horario, :logado)";
-            $stmt = $conn->prepare($sql);
-    
-            $stmt->bindParam(':bairro', $bairro);
-            $stmt->bindParam(':cliente_id', $cliente_id);
-            $stmt->bindParam(':especialidade', $especialidade);
-            $stmt->bindParam(':medico', $medico);
-            $stmt->bindParam(':horario', $horario);
-    
-            $stmt->execute();
-    
-            return $stmt;
-        }
             
     }
 
