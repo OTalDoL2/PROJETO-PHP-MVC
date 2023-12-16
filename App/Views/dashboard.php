@@ -198,8 +198,26 @@
         <button type="button" class="btn btn-primary btn-block" id="submitButton" disabled>Agendar</button>
     </form>
 </div>
-        
-
+<!-- MODAL -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalhes do Agendamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Bairro:</strong> <span id="modalBairro"></span></p>
+                <p><strong>Especialidade:</strong> <span id="modalEspecialidade"></span></p>
+                <p><strong>Médico:</strong> <span id="modalMedico"></span></p>
+                <p><strong>Horário:</strong> <span id="modalHorario"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const selectBairro = document.getElementById('selectBairro');
@@ -267,6 +285,27 @@
             alert('Selecione pelo menos um horário disponível.');
         } else {
             alert('Agendamento realizado com sucesso!');
+        }
+    });
+    submitButton.addEventListener('click', function () {
+        const horariosSelecionados = document.querySelectorAll('#horarioSection input[type=radio]:checked');
+        if (horariosSelecionados.length === 0) {
+            alert('Selecione pelo menos um horário disponível.');
+        } else {
+            const bairroSelecionado = selectBairro.value;
+            const especialidadeSelecionada = selectEspecialidade.value;
+            const medicoSelecionado = selectMedico.value;
+            const horarioSelecionado = horariosSelecionados[0].value;
+
+            // Exibir os dados no modal
+            document.getElementById('modalBairro').innerText = bairroSelecionado;
+            document.getElementById('modalEspecialidade').innerText = especialidadeSelecionada;
+            document.getElementById('modalMedico').innerText = medicoSelecionado;
+            document.getElementById('modalHorario').innerText = horarioSelecionado;
+
+            // Abrir o modal
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.show();
         }
     });
 </script>
