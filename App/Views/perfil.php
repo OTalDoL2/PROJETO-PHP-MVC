@@ -1,3 +1,28 @@
+<?php
+    $conn = $this->connect();
+        
+    $query = "SELECT * FROM usuarios WHERE logado = 1";
+
+
+    // Prepara a consulta
+    $stmta = $conn->prepare($query);
+
+    $stmta->execute();
+
+    $resultados = $stmta->fetch();
+    // $resultados = $resultados[0];
+    
+
+   
+
+    $nomeEditavel = $resultados[1];
+    $cpfEditavel = $resultados[2];
+    $telefoneEditavel = $resultados[3];
+    $enderecoEditavel = $resultados[4];
+    $emailEditavel = $resultados[5];
+    $senhaEditavel = $resultados[6];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="stylesheet" type="text/css" href="config/materialize/css/materialize.min.css"></!-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
+<style>
 
         body{
             background-color: #f4f5f7;
@@ -80,7 +105,7 @@
                             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                             <img src="https://i.postimg.cc/fTYP8dJn/OIP.png"
                               alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                              <h5 id="nome">Jandir Colto</h5>
+                              <h5 id="nome"><?php echo $nomeEditavel; ?></h5>
                               <p id="cargo">Paciente</p>
                               <i class="far fa-edit mb-5"></i>
                           </div>
@@ -91,30 +116,31 @@
                                 <div class="row pt-1">
                                     <div class="col-6 mb-3">
                                         <h6>Nome:</h6>
-                                        <input id="nomeEditavel" class="form-control" type="text" value="Jandir Colto" required maxlength="30">
+                                        <input id="nomeEditavel" class="form-control" type="text"  value="<?php echo $nomeEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>CPF:</h6>
-                                        <input id="cpfEditavel" class="form-control" type="text" pattern="\d{11}" maxlength="11" placeholder="12345678901" required>
+                                        <input id="cpfEditavel" class="form-control" type="text" pattern="\d{11}" maxlength="11" placeholder="<?php echo $cpfEditavel; ?>" required>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Telefone:</h6>
-                                        <input id="telefoneEditavel" class="form-control" type="tel" pattern="\d{11}" maxlength="11" placeholder="12345678901" required>
+                                        <input id="telefoneEditavel" class="form-control" type="tel" pattern="\d{11}" maxlength="11" placeholder="<?php echo $telefoneEditavel; ?>" required>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Endereço:</h6>
-                                        <input id="enderecoEditavel" class="form-control" type="text" value="Rua Exemplo, 123" required maxlength="30">
+                                        <input id="enderecoEditavel" class="form-control" type="text" value="<?php echo $enderecoEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Email:</h6>
-                                        <input id="emailEditavel" class="form-control" type="email" value="infexemploemail@gmail.com" required>
+                                        <input id="emailEditavel" class="form-control" type="email" value="<?php echo $emailEditavel; ?>" required>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <h6>Senha:</h6>
-                                        <input id="senhaEditavel" class="form-control" type="password" value="Dolor sit amet" required maxlength="30">
+                                        <input id="senhaEditavel" class="form-control" type="password" value="<?php echo $senhaEditavel; ?>" required maxlength="30">
                                     </div>
                                     <div class="d-flex justify-content-start ml-3">
-                                        <button id="btnSalvar" onclick="salvarAlteracoes()" class="btn btn-primary">Salvar Alterações</button>
+                                        <a id="btnSalvar" class="btn btn-primary" href="?router=registro/home/">Salvar Alterações</a>
+                                        <!-- <button id="btnSalvar" onclick="salvarAlteracoes()" class="btn btn-primary">Salvar Alterações</button> -->
                                     </div>
                             </div>
                         </div>
@@ -176,8 +202,12 @@
                     alert("O campo de telefone é obrigatório e deve conter 11 dígitos numéricos.");
                     return;
                 }
+
+                <?php 
+                ?>
         
                 // Aqui você pode salvar as alterações, pois todos os campos são válidos.
+                
                 alert("Alterações salvas com sucesso!");
             }
         

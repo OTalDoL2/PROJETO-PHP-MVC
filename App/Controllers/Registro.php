@@ -35,6 +35,11 @@ class Registro extends Crud {
               </script>";
     }
 
+    public function atualizarUsuario(){
+        $this->update();
+        require_once __DIR__ . '/../Views/perfil.php';
+    }
+
     public function tester(){
         require_once __DIR__ . '/../Views/you.php';
     }
@@ -42,7 +47,7 @@ class Registro extends Crud {
         $cadastro = $this->create();
         
         require_once __DIR__ . '/../Views/cadastro.php';
-
+        
         if($cadastro === true){
         $titulo = "Cadastro";
         $mensagem = "Registrado com Sucesso!";
@@ -54,6 +59,7 @@ class Registro extends Crud {
     public function consulta(){
         $this->create_consulta();
         
+        require_once __DIR__ . '/../Views/dashboard.php';
         // if($cadastro === true){
         //     $titulo = "Cadastro";
         //     $mensagem = "Registraassssssssssssssssssssdo com Sucesso!";
